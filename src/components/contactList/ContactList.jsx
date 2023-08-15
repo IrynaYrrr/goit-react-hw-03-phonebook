@@ -1,5 +1,6 @@
 import React from "react";
 import css from "./ContactList.module.css";
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, handleDelete }) => {
   return (
@@ -19,4 +20,10 @@ export const ContactList = ({ contacts, handleDelete }) => {
       </ul>
     </div>
   )
+}
+
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  handleDelete: PropTypes.func.isRequired,
 }
