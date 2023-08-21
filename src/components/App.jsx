@@ -26,7 +26,7 @@ export class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.contacts.length !== this.state.contacts.length) {
+    if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
     }
   }
@@ -79,7 +79,6 @@ export class App extends Component {
         />
         <ContactList
           contacts={filtered}
-          filter={this.state.filter}
           handleDelete={this.handleDelete}
         />
       </div>
